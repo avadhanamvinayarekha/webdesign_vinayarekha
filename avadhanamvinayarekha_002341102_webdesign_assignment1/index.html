@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Donation</title>
+    <link rel="icon" href="assets/images/donate-blood-logo.png" type="image/svg+xml" />
     <link rel="stylesheet" href="css/styles.css">
     <meta name="description" content="Volunteer blood donation saves lives—find drives, learn eligibility, and sign up." />
 </head>
 <body>
-<header>
-  <nav>
-    <a  href="index.html">
+<header class="site-header" >
+  <nav class="nav-wrap">
+   
+    <a class="brand" href="index.html" >
+      <img src="assets/images/donate-blood-logo.png" alt="Blood Donation Logo" class="logo"  />
+      Blood Donation
+    </a>
       
     </a>
-    <ul>
+    <ul class="nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="eligibility.html">Who Can Donate</a></li>
       <li><a href="drives.html">Blood Supply</a></li>
@@ -25,23 +30,24 @@
 </header>
 
 <section class="hero">
-  <div>
-    <h1>Your drop, someone’s tomorrow</h1>
+  <div class="center-align">
+    <h1 >Your drop, someone’s tomorrow</h1>
     <p>When you donate blood, you’re part of the lifeline that hospitals count on every day.</p>
 
     
       <a class="btn" href="contact.html">Donate Blood now</a>
-      <a href="drives.html">Check Blood availability</a>
+      <a  class="blood-availability-link" href="drives.html">Check Blood availability</a>
     </div>
   </div>
-  <div>
-    <h3>Urgent blood types</h3>
-    <p><span>O-</span> universal donor · <span>B-</span> very low</p>
+  <div class="center-align">
+    <h3 class="blood-type">Urgent blood types needed</h3>
+    <p><span>O-</span> universal donor</p>
+     <p><span>B-</span> very low</p>
     <p>Check the live blood suply on the “Blood Supply” page.</p>
   </div>
 </section>
 
-<main>
+<main  class="center-align">
  
     <h2 id="why">Why donate?</h2>
 
@@ -59,18 +65,18 @@
         <p>Hospitals rely on volunteer donors to keep shelves stocked every day of the year.</p>
       </article>
     </div>
-   <video>
-  <source src="" type="video/mp4">
+   <video controls width="300">
+  <source src="assets/video/blood_donation_video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
   </div>
-  <a href="media.html" class="btn">Learn More</a>
+  <a href="media.html" class="btn-learn-more">Learn More</a>
   </section>
   
-  <section>
-    <h2 id="feature">Featured story</h2>
+  <section  class="center-align">
+    <h1 id="feature">Featured story</h1>
     <figure>
-  <img src="" 
+  <img src="assets/images/blood_donation_awarness_image.png" 
        alt="World Blood Donor Day poster showing diverse donors and recipients">
   <figcaption>
     World Blood Donor Day reminds us: <strong>Give Blood, Give Hope</strong> — together we save lives.
