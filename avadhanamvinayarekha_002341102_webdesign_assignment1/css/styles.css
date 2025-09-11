@@ -12,6 +12,8 @@ header {
   background: #b30000; 
   color: white;
   padding: 10px 0;
+  padding: 10px 10px;
+  border-radius: 5px;
 }
 
 
@@ -206,7 +208,7 @@ footer a:hover {
   color: #b30000;
   border-radius: 4px;
 }
-.center-align {
+.center-align{
   text-align: center;
   margin-top: 40px;
 }
@@ -244,4 +246,18 @@ footer a:hover {
   border-radius: 4px;
   text-decoration: none;
   margin-left: 12px;
+}
+#eligibility,#before-you-donate{
+  margin-left: 20px;
+}
+
+.molly-image,.angie-image {
+  height: 200px;
+  width: 200px;
+  display: block;       
+  margin: 0 auto;       
+}
+.figure-molly ,.figure-angie{
+  text-align: center;  
+  margin: 20px auto;
 }
