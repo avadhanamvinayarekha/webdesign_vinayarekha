@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Donation - Drives</title>
     <link rel="stylesheet" href="css/styles.css">
-    <meta name="description" content="upcoming blood donation drives and events" />
+    <meta name="description" content="Blood donation drives and events" />
 </head>
 <body>
     <header>
-  <nav aria-label="Primary">
-    <a  href="index.html" aria-label="BlooddonationHome">
-      
-    </a>
+  <nav>
     <ul>
         <li><a href="index.html">Home</a></li>
       <li><a href="eligibility.html">Who Can Donate</a></li>
@@ -23,6 +20,110 @@
     </ul>
   </nav>
 </header>
+<main>
+  <header>
+    <h1>Find a Drive & Check Inventory</h1>
+    <p>Use the search and filters below to explore upcoming drives and current blood stock.</p>
+  </header>
 
+  
+  <section>
+    <h2 id="inventory">Find Inventory</h2>
+
+   
+    <form>
+      <label>
+        <span >Search blood type</span>
+        <input type="search" name="q" placeholder="Search blood type (e.g., O-, A+)" list="blood-types">
+      </label>
+      <datalist id="blood-types">
+        <option value="O+"><option value="O-"><option value="A+"><option value="A-">
+        <option value="B+"><option value="B-"><option value="AB+"><option value="AB-">
+      </datalist>
+
+      <label>
+        Status
+        <select name="status">
+          <option value="">All</option>
+          <option value="critical">Critical</option>
+          <option value="low">Low</option>
+          <option value="stable">Stable</option>
+          <option value="high">High</option>
+        </select>
+      </label>
+
+      <label>
+        Availability
+        <select name="availability">
+          <option value="">All</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </label>
+
+      <button type="submit" class="btn" disabled>Apply</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr><th scope="col">Type</th><th scope="col">Units</th><th scope="col">Status</th><th scope="col">Availability</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>O+</td><td>45</td><td><span class="badge stable">Stable</span></td><td>High</td></tr>
+        <tr><td>O-</td><td>12</td><td><span class="badge critical">Critical</span></td><td>Low</td></tr>
+        <tr><td>A+</td><td>30</td><td><span class="badge low">Low</span></td><td>Medium</td></tr>
+        <tr><td>B-</td><td>8</td><td><span class="badge critical">Critical</span></td><td>Low</td></tr>
+      </tbody>
+    </table>
+    <p id="inv-note" class="small">Inventory values refresh every 24 hours.</p>
+  </section>
+
+ 
+  <section>
+    <h2 id="drives">Find a Drive</h2>
+
+    
+    <form>
+      <label>
+        City
+        <select name="city">
+          <option value="">All</option>
+          <option>Boston</option>
+          <option>New York</option>
+          <option>Illinois</option>
+        </select>
+      </label>
+
+      <label>
+        Day
+        <select name="day">
+          <option value="">All</option>
+          <option>Sunday morning</option>
+          <option>Monday morning</option>
+        </select>
+      </label>
+
+      <label>
+        <span>Search date or venue</span>
+        <input type="search" name="q" placeholder="Search date (e.g., Oct 12) or venue">
+      </label>
+
+      <button type="submit" class="btn" disabled>Apply</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr><th scope="col">Date</th><th scope="col">City</th><th scope="col">Venue</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Sun, Oct 5</td><td>Boston</td><td>Communicated after signup</td></tr>
+        <tr><td>Mon, Oct 12</td><td>New York</td><td>Communicated after signup</td></tr>
+        <tr><td>Sun, Oct 19</td><td>Illinois</td><td>Communicated after signup</td></tr>
+      </tbody>
+    </table>
+    <p id="drive-note">Drives run every two weeks on Sunday and Monday mornings. Venue details are shared once you sign up.</p>
+  </section>
+</main>
 </body>
 </html>
