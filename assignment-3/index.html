@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <p id="studentInfo" > </p>
+    <button id="submitBtn" type="button" disabled>Submit</button>
+    <table id="studentTable">
+        <thead>
+  <tr>
+    <th scope="col">View</th>
+    <th scope="col">Student</th>
+    <th scope="col">Grade</th>
+    <th scope="col">Subject</th>
+    <th scope="col">Teacher</th>
+    <th scope="col">Delete</th>
+    <th scope="col">Edit</th>
+  </tr>
+</thead>
+<tbody>
+
+  <tr>
+    
+    <td class = "arrow-cell">
+      <button class="arrow" data-expanded="false" data-target="details-1"  title="View more">
+        <img class="arrow-icon" src="assets/arrow-green.png" alt="Expand row">
+      </button>
+    </td>
+
+
+    <td>Student 1</td>
+    <td>A</td>
+    <td>Math</td>
+    <td>Teacher 1</td>
+
+   
+    <td class="cell-delete"></td>
+    <td class="cell-edit"></td>
+  </tr>
+
+ 
+  <tr id="details-1" class="details is-hidden">
+    <td colspan="7">
+    
+      <div class="details-box">
+        <h4>Student 1 — details</h4>
+        <ul>
+          <li>NU ID: 0123456789</li>
+          <li>Attendance: 96%</li>
+          <li>Remarks: Consistent performance</li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+</tbody>
+
+    </table>
+ 
+
+</body>
+   <footer class="site-footer">
+  Icon credit:
+  <span id="iconCredit">Icon by <em>AUTHOR</em> – Flaticon</span>
+</footer>
+
+</html>
