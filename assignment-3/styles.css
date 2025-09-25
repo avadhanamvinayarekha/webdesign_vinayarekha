@@ -70,3 +70,10 @@
 .site-footer a:focus {
   text-decoration: underline;  
 }
+.action-btn {
+  padding: 4px 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: orange;
+  cursor: pointer;
+}
