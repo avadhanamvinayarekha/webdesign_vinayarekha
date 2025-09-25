@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const name =" Avadhanam Vinaya Rekha";
+    const name ="Avadhanam Vinaya Rekha";
     const nuid ="002341102";
 
    const info = document.getElementById('studentInfo');
@@ -149,6 +149,12 @@ function makeButton(label, onClick) {
   btn.addEventListener('click', onClick);
   return btn;
 }
+function updateSubmitState() {
+  const submitBtn = document.getElementById('submitBtn');
+  if (!submitBtn) return;
+  const anyChecked = !!document.querySelector('.rowCheckbox:checked');
+  submitBtn.disabled = !anyChecked;
+}
 
 
 function onSelectRow(checkbox) {
@@ -177,11 +183,9 @@ function onSelectRow(checkbox) {
     deleteCell.innerHTML = '';
     editCell.innerHTML = '';
   }
-
+  updateSubmitState();
  
-  const anyChecked = !!document.querySelector('.rowCheckbox:checked');
-  const submitBtn = document.getElementById('submitBtn');
-  if (submitBtn) submitBtn.disabled = !anyChecked;
+ 
 }
 
 
@@ -198,6 +202,7 @@ function deleteRow(buttonEl) {
 
   alert(`${studentLabel} Record deleted successfully.`);
   renumberStudents();
+  updateSubmitState();
 
   
   const anyChecked = !!document.querySelector('.rowCheckbox:checked');
@@ -237,8 +242,8 @@ function renumberStudents() {
     const newId = `details-${n}`;
     if (detailsRow && detailsRow.classList.contains('details')) {
       detailsRow.id = newId;
-      const detailsTd = detailsRow.querySelector('td');
-      if (detailsTd) detailsTd.colSpan = 8; 
+      const td = detailsRow.querySelector('td');
+      if (td) td.colSpan = 8; 
     }
     if (arrowBtn) arrowBtn.dataset.target = newId;
 
@@ -251,5 +256,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.rowCheckbox').forEach(cb => {
     cb.addEventListener('change', () => onSelectRow(cb));
   });
+  updateSubmitState();
 });
+
+
 
