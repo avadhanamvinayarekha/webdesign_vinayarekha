@@ -38,18 +38,18 @@ const dynamicTextSlot = $('#dynamicTextSlot');
 
 const rules = {
   title:       { required: true, group: 'radio' },
-  firstName:   { required: true, min: 2, max: 30, pattern: /^[A-Za-z ]+$/,              patternMsg: 'Letters/spaces only' },
-  lastName:    { required: true, min: 2, max: 30, pattern: /^[A-Za-z ]+$/,              patternMsg: 'Letters/spaces only' },
+  firstName:   { required: true, min: 2, max: 30, pattern: /^[A-Za-z ]+$/,patternMsg: 'Letters/spaces only' },
+  lastName:    { required: true, min: 2, max: 30, pattern: /^[A-Za-z ]+$/,patternMsg: 'Letters/spaces only' },
   emailId:     { required: true, min: 6, max: 60, pattern: /^[A-Za-z0-9._%+-]+@northeastern\.edu$/i, patternMsg: 'Use your @northeastern.edu email' },
   
-  phoneNumber: { required: true, pattern: /^\(\d{3}\) \d{3}-\d{4}$/,                    patternMsg: 'Use (123) 456-7890' },
-  zipcode:     { required: true, pattern: /^\d{5}$/,                                   patternMsg: 'Enter 5 digits' },
+ phoneNumber: { required: true, min: 14, max: 14, pattern: /^\(\d{3}\) \d{3}-\d{4}$/, patternMsg: 'Use (123) 456-7890' },
+  zipcode:     { required: true, min: 5,  max: 5,  pattern: /^\d{5}$/,patternMsg: 'Enter 5 digits' },
   source:      { required: true, group: 'checkbox' },
   listBox:     { required: true, single: true },
   comments:    { required: true, min: 15, max: 300 },
-  address1:    { required: true, min: 5,  max: 60, pattern: /^[A-Za-z0-9 #.,-]+$/,      patternMsg: 'Letters/digits/ #.,- only' },
-  address2:    { required: false,         max: 20, pattern: /^[A-Za-z0-9 #.,-]*$/,      patternMsg: 'Letters/digits/ #.,- only' },
-  dynamicText: { required: false, min: 2, max: 40, pattern: /^[A-Za-z0-9 ]+$/,          patternMsg: 'Alphanumeric only' }, 
+  address1:    { required: true, min: 5,  max: 60, pattern: /^[A-Za-z0-9 #.,-]+$/,patternMsg: 'Letters/digits/ #.,- only' },
+  address2:    { required: false,         max: 20, pattern: /^[A-Za-z0-9 #.,-]*$/,patternMsg: 'Letters/digits/ #.,- only' },
+  dynamicText: { required: false, min: 2, max: 40, pattern: /^[A-Za-z0-9 ]+$/,patternMsg: 'Alphanumeric only' }, 
 };
 
 
