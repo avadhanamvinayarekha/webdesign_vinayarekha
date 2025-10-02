@@ -24,7 +24,7 @@
 	 <h3>Love something? Hate something? Let us know!</h3>
 		 Note : Fields marked with an asterisk(*) are mandatory
 		 <br><br>
-		 <form method="post" novalidate>
+		 <form id="feedbackForm" method="post" novalidate>
 			<label>Title*:</label>
 			<input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
 			<input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
@@ -58,7 +58,38 @@
 			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx"/>
 			<span class="error" id="error-zipcode"></span>
 			<br><br>
-             
+			
+			<label for="listBox">Pick a topic*:</label>
+				<select id="listBox">
+  				<option value="">-- Select --</option>
+  				<option value="Website Feedback">Website Feedback</option>
+  				<option value="Support Request">Support Request</option>
+  				<option value="Feature Idea">Feature Idea</option>
+  				<option value="Bug Report">Bug Report</option>
+  				<option value="General Query">General Query</option>
+				</select>
+				<span class="error" id="error-listBox"></span>
+				<br><br>
+
+
+				<div id="dynamicBox"></div>
+
+			<div id="dynamicTextSlot" style="margin-top:6px;"></div>
+			<br>
+
+				<label for="address1">Street Address 1*:</label>
+<input type="text" id="address1" placeholder="123 Main St" maxlength="60">
+<span class="error" id="error-address1"></span>
+<br><br>
+
+<label for="address2">Street Address 2 (optional):</label>
+<input type="text" id="address2" placeholder="Apt, Unit, Suite" maxlength="20">
+<span class="error" id="error-address2"></span>
+<br><br>
+
+
+
+
             <label for="zipcode">How did you hear*:</label>
 			<input type='checkbox' name="source" value="facebook" /> Facebook
             <input type='checkbox' name="source" value="google" /> Google
@@ -70,10 +101,12 @@
 			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
 			<span class="error" id="error-comments"></span>
 			<br><br>
-			<input type="Submit" disabled>
+			<input type="Submit"  id="btnSubmit" disabled>
 			<input type="Reset">
 			<br><br>
 		 </form>
+		 <section id="results"></section>
+
 	 </main>
  </div>
 
