@@ -5,7 +5,13 @@ $(function () {
 
 
   if (onLogin) {
-    const USERS = [{ email: "student@northeastern.edu", password: "password123" }];
+    const USERS = [
+        { email: "student@northeastern.edu", password: "password123" },
+        { email: "john.doe@northeastern.edu", password: "securepass456" },
+      { email: "jane.smith@northeastern.edu", password: "mypassword789" },
+      { email: "demo@northeastern.edu", password: "demo1234567" }
+
+    ];
 
     const $email = $("#email");
     const $password = $("#password");
