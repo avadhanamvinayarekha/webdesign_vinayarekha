@@ -61,10 +61,10 @@ $(function () {
   }
 
   
-  function startTicker() {
+  function startTimerAsync() {
     return new Promise((resolve) => {
       ticker = setInterval(() => { elapsed += 1; paint(); }, 1000);
-      resolve(); 
+       window.resolveTimer = resolve;
     });
   }
 
@@ -72,12 +72,13 @@ $(function () {
     if (!validate() || running) return;
     running = true;
     setUI(true);
-    await startTicker();
+    await startTimerAsync();
   }
 
   function handlePause() {
     if (!running) return;
-    clearInterval(ticker); ticker = null;
+     if (ticker) { clearInterval(ticker); ticker = null; }
+    if (window.resolveTimer) { window.resolveTimer(); window.resolveTimer = null; }
     running = false;
     setUI(false);
     $btnPause.text("Resume");
@@ -88,30 +89,49 @@ $(function () {
     running = true;
     setUI(true);
     $btnPause.text("Pause");
-    await startTicker();
+    await startTimerAsync();
   }
 
-  function handleStopSave() {
+ function handleStopSave() {
     if (ticker) { clearInterval(ticker); ticker = null; }
-    running = false; setUI(false); $btnPause.text("Pause");
+    if (window.resolveTimer) { window.resolveTimer(); window.resolveTimer = null; }
+    running = false; 
+    setUI(false); 
+    $btnPause.text("Pause");
 
-    const record = {
-      date: $date.val(),
-      name: ($name.val() || "").trim(),
-      duration: elapsed
-    };
+   
+    saveSessionAsync();
+  }
 
-    const key = "stopwatch_sessions_v1";
-    const list = JSON.parse(localStorage.getItem(key) || "[]");
-    list.push(record);
-    localStorage.setItem(key, JSON.stringify(list));
+  
+  async function saveSessionAsync() {
+    return new Promise((resolve) => {
+      
+      setTimeout(() => {
+        const record = {
+          date: $date.val(),
+          name: ($name.val() || "").trim(),
+          duration: elapsed
+        };
 
-    renderHistory($filterDate.val());
+        const key = "stopwatch_sessions_v1";
+        const list = JSON.parse(localStorage.getItem(key) || "[]");
+        list.push(record);
+        localStorage.setItem(key, JSON.stringify(list));
+
+        
+        elapsed = 0;
+        paint();
+        renderHistory($filterDate.val());
+        
+        resolve();
+      }, 0);
+    });
   }
 
   function handleReset() {
     if (ticker) { clearInterval(ticker); ticker = null; }
-    running = false;
+    if (window.resolveTimer){window.resolveTimer(); window.resolveTimer = null;}
     elapsed = 0;
     paint();
     setUI(false);
