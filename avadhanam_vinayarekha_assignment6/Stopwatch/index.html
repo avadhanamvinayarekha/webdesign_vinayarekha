@@ -8,7 +8,43 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script defer src="script.js"></script>
 </head>
-<body>
-    
+<body class="page page-stopwatch">
+  <main class="container">
+    <h1>Event Stopwatch</h1>
+
+    <div id="timer" class="timer">00:00:00</div>
+
+    <div class="grid two">
+      <div class="form-control">
+        <label for="eventDate">Date</label>
+        <input type="date" id="eventDate" />
+        <small class="error" id="dateError"></small>
+      </div>
+      <div class="form-control">
+        <label for="eventName">Event Name</label>
+        <input type="text" id="eventName" placeholder="e.g. Workout" />
+        <small class="error" id="nameError"></small>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="btnStart" class="btn btn-primary">Start</button>
+      <button id="btnPause" class="btn" disabled>Pause</button>
+      <button id="btnStopSave" class="btn" disabled>Stop &amp; Save</button>
+      <button id="btnReset" class="btn btn-danger" disabled>Reset</button>
+    </div>
+
+    <section class="history">
+      <div class="form-control" style="max-width:220px;">
+        <label for="filterDate">Filter by date</label>
+        <input type="date" id="filterDate" />
+      </div>
+
+      <div id="stats" class="small" style="margin-bottom:8px;">No sessions recorded yet</div>
+      <ul id="historyList" class="history-list"></ul>
+    </section>
+
+    <div id="toast" class="toast"></div>
+  </main>
 </body>
 </html>
