@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - BookVerse</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body >
+   
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">BookVerse</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalog.html" class="active">Catalog</a></li>
+                    <li><a href="#" class="btn-primary">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   
+    <section class="page-header">
+        <div class="container">
+            <h1>Browse Our Collection</h1>
+            <p>Discover your next favorite book from thousands of titles</p>
+        </div>
+    </section>
+
+  
+    <section class="catalog-section">
+        <div class="container">
+            <div class="catalog-layout">
+               
+                <aside class="sidebar">
+                    <div class="filter-section">
+                        <h3>Filters</h3>
+                        
+                        <div class="filter-group">
+                            <h4>Category</h4>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="fiction">
+                                <span>Fiction</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="non-fiction">
+                                <span>Non-Fiction</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="science">
+                                <span>Science</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="business">
+                                <span>Business</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="self-help">
+                                <span>Self-Help</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Price Range</h4>
+                            <label class="filter-option">
+                                <input type="radio" name="price" value="all" checked>
+                                <span>All Prices</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="price" value="under5">
+                                <span>Under $5</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="price" value="5to10">
+                                <span>$5 - $10</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="price" value="over10">
+                                <span>Over $10</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Availability</h4>
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="rent">
+                                <span>Available to Rent</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="buy">
+                                <span>Available to Buy</span>
+                            </label>
+                        </div>
+
+                        <button class="btn-primary btn-full-width">Apply Filters</button>
+                    </div>
+                </aside>
+
+              
+                <main class="catalog-main">
+                   
+                    <div class="catalog-controls">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search books...">
+                            <button class="search-btn">Search</button>
+                        </div>
+                        <select class="sort-dropdown">
+                            <option>Sort by: Popularity</option>
+                            <option>Sort by: Price (Low to High)</option>
+                            <option>Sort by: Price (High to Low)</option>
+                            <option>Sort by: Title (A-Z)</option>
+                            <option>Sort by: Rating</option>
+                        </select>
+                    </div>
+
+              
+                    <div class="catalog-grid books-grid">
+                        <div class="catalog-book-card">
+                            <div class="book-cover-large" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                            <div class="book-info">
+                                <h3>The Midnight Library</h3>
+                                <p class="author">Matt Haig</p>
+                                <p class="description">Between life and death, there is a library. A place where each book contains an alternate life you could have lived.</p>
+                                <div class="rating">⭐⭐⭐⭐⭐ (4.5)</div>
+                                <div class="book-actions">
+                                    <button class="btn-secondary">Rent $3.99</button>
+                                    <button class="btn-primary">Buy $12.99</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-book-card">
+                            <div class="book-cover-large" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                            <div class="book-info">
+                                <h3>Atomic Habits</h3>
+                                <p class="author">James Clear</p>
+                                <p class="description">Tiny changes, remarkable results. Transform your life with good habits and break bad ones.</p>
+                                <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+                                <div class="book-actions">
+                                    <button class="btn-secondary">Rent $4.99</button>
+                                    <button class="btn-primary">Buy $14.99</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-book-card">
+                            <div class="book-cover-large" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                            <div class="book-info">
+                                <h3>Project Hail Mary</h3>
+                                <p class="author">Andy Weir</p>
+                                <p class="description">A lone astronaut must save Earth from disaster in this gripping sci-fi thriller.</p>
+                                <div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
+                                <div class="book-actions">
+                                    <button class="btn-secondary">Rent $4.49</button>
+                                    <button class="btn-primary">Buy $13.99</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-book-card">
+                            <div class="book-cover-large" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                            <div class="book-info">
+                                <h3>The Psychology of Money</h3>
+                                <p class="author">Morgan Housel</p>
+                                <p class="description">Timeless lessons on wealth, greed, and happiness from one of today's best financial writers.</p>
+                                <div class="rating">⭐⭐⭐⭐⭐ (4.6)</div>
+                                <div class="book-actions">
+                                    <button class="btn-secondary">Rent $3.49</button>
+                                    <button class="btn-primary">Buy $11.99</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-book-card">
+                            <div class="book-cover-large" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                            <div class="book-info">
+                                <h3>Where the Crawdads Sing</h3>
+                                <p class="author">Delia Owens</p>
+                                <p class="description">A beautiful coming-of-age story set in the marshes of North Carolina.</p>
+                                <div class="rating">⭐⭐⭐⭐ (4.4)</div>
+                                <div class="book-actions">
+                                    <button class="btn-secondary">Rent $3.99</button>
+                                    <button class="btn-primary">Buy $12.49</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-book-card">
+                            <div class="book-cover-large" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);"></div>
+                            <div class="book-info">
+                                <h3>Educated</h3>
+                                <p class="author">Tara Westover</p>
+                                <p class="description">A memoir about a woman who leaves her survivalist family to pursue education.</p>
+                                <div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
+                                <div class="book-actions">
+                                    <button class="btn-secondary">Rent $4.29</button>
+                                    <button class="btn-primary">Buy $13.49</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-book-card">
+                            <div class="book-cover-large" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
+                            <div class="book-info">
+                                <h3>Sapiens</h3>
+                                <p class="author">Yuval Noah Harari</p>
+                                <p class="description">A brief history of humankind that explores how we became the dominant species.</p>
+                                <div class="rating">⭐⭐⭐⭐⭐ (4.5)</div>
+                                <div class="book-actions">
+                                    <button class="btn-secondary">Rent $4.99</button>
+                                    <button class="btn-primary">Buy $15.99</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-book-card">
+                            <div class="book-cover-large" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);"></div>
+                            <div class="book-info">
+                                <h3>The Silent Patient</h3>
+                                <p class="author">Alex Michaelides</p>
+                                <p class="description">A woman's act of violence against her husband and her silence that follows.</p>
+                                <div class="rating">⭐⭐⭐⭐ (4.3)</div>
+                                <div class="book-actions">
+                                    <button class="btn-secondary">Rent $3.79</button>
+                                    <button class="btn-primary">Buy $11.99</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-book-card">
+                            <div class="book-cover-large" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);"></div>
+                            <div class="book-info">
+                                <h3>Thinking, Fast and Slow</h3>
+                                <p class="author">Daniel Kahneman</p>
+                                <p class="description">Explore the two systems that drive the way we think and make decisions.</p>
+                                <div class="rating">⭐⭐⭐⭐⭐ (4.6)</div>
+                                <div class="book-actions">
+                                    <button class="btn-secondary">Rent $4.49</button>
+                                    <button class="btn-primary">Buy $14.49</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="pagination">
+                        <button class="page-btn">Previous</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <button class="page-btn">Next</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>BookVerse</h4>
+                    <p>Your premier destination for digital books</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BookVerse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
