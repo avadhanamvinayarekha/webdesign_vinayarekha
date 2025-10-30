@@ -1,0 +1,42 @@
+
+@function rem($pixels, $base: 16) {
+    @return #{$pixels / $base}rem;
+}
+
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+
+@function spacing($multiplier) {
+    @return $spacing-sm * $multiplier;
+}
+
+
+@function contrast-color($color) {
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);
+    
+    $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+    
+    @if ($yiq >= 128) {
+        @return $dark-color;
+    } @else {
+        @return $white;
+    }
+}
+
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+} 
