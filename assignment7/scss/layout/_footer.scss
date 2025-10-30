@@ -1,0 +1,91 @@
+
+
+.footer {
+    background: $dark-color;
+    color: $white;
+    padding: $spacing-2xl 0 $spacing-lg;
+    
+    
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-xl;
+        margin-bottom: $spacing-xl;
+        
+        @include respond-to(md) {
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: rem(200);
+            
+            h4 {
+                color: $white;
+                margin-bottom: $spacing-md;
+                font-size: $font-size-lg;
+            }
+            
+            p {
+                color: rgba($white, 0.7);
+                margin-bottom: 0;
+            }
+            
+            ul {
+                li {
+                    margin-bottom: spacing(0.75);
+                    
+                    a {
+                        color: rgba($white, 0.7);
+                        transition: color $transition-fast;
+                        
+                        &:hover {
+                            color: $white;
+                            padding-left: $spacing-xs;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        padding-top: $spacing-lg;
+        border-top: 1px solid rgba($white, 0.1);
+        
+        p {
+            color: rgba($white, 0.5);
+            margin-bottom: 0;
+        }
+    }
+}
+
+.cta-section {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    padding: $spacing-3xl 0;
+    text-align: center;
+    color: $white;
+    
+    .cta-content {
+        h2 {
+            color: $white;
+            margin-bottom: $spacing-md;
+        }
+        
+        p {
+            font-size: $font-size-xl;
+            margin-bottom: $spacing-xl;
+            opacity: 0.9;
+        }
+        
+        .btn-primary {
+            background: $white;
+            color: $primary-color;
+            
+            &:hover {
+                background: shade($white, 5%);
+            }
+        }
+    }
+}
