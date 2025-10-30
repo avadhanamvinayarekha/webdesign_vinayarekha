@@ -1,0 +1,251 @@
+
+
+.page-header {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: $white;
+    padding: $spacing-2xl 0;
+    text-align: center;
+    
+    h1 {
+        color: $white;
+        margin-bottom: $spacing-sm;
+    }
+    
+    p {
+        font-size: $font-size-lg;
+        opacity: 0.9;
+        margin-bottom: 0;
+    }
+}
+
+.catalog-section {
+    padding: $spacing-2xl 0;
+    
+
+    .catalog-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $spacing-xl;
+        
+        @include respond-to(lg) {
+            grid-template-columns: rem(280) 1fr;
+            gap: $spacing-2xl;
+        }
+    }
+}
+
+
+.sidebar {
+    .filter-section {
+        @extend %card-base;
+        position: sticky;
+        top: calc(#{$spacing-lg} + #{$spacing-2xl});
+        
+        h3 {
+            font-size: $font-size-2xl;
+            margin-bottom: $spacing-lg;
+            padding-bottom: $spacing-md;
+            border-bottom: 2px solid $primary-color;
+        }
+        
+        .filter-group {
+            margin-bottom: $spacing-xl;
+            
+            h4 {
+                font-size: $font-size-lg;
+                margin-bottom: $spacing-md;
+                color: $text-primary;
+            }
+            
+           
+            .filter-option {
+                @include flex-center;
+                justify-content: flex-start;
+                gap: $spacing-sm;
+                padding: $spacing-xs 0;
+                cursor: pointer;
+                transition: all $transition-fast;
+                
+                &:hover {
+                    color: $primary-color;
+                    padding-left: $spacing-xs;
+                }
+                
+                input[type="checkbox"],
+                input[type="radio"] {
+                    cursor: pointer;
+                    width: rem(18);
+                    height: rem(18);
+                    accent-color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+
+.catalog-main {
+
+    .catalog-controls {
+        @include flex-between;
+        margin-bottom: $spacing-xl;
+        gap: $spacing-md;
+        flex-wrap: wrap;
+        
+        .search-box {
+            display: flex;
+            flex: 1;
+            min-width: rem(250);
+            
+            input {
+                flex: 1;
+                padding: $spacing-sm $spacing-md;
+                border: 2px solid rgba($primary-color, 0.2);
+                border-radius: $border-radius-md 0 0 $border-radius-md;
+                font-size: $font-size-base;
+                transition: border-color $transition-fast;
+                
+                &:focus {
+                    outline: none;
+                    border-color: $primary-color;
+                }
+            }
+            
+            .search-btn {
+                @extend %button-base;
+                background: $primary-color;
+                color: $white;
+                border-radius: 0 $border-radius-md $border-radius-md 0;
+                padding: $spacing-sm $spacing-lg;
+            }
+        }
+        
+        .sort-dropdown {
+            padding: $spacing-sm $spacing-md;
+            border: 2px solid rgba($primary-color, 0.2);
+            border-radius: $border-radius-md;
+            font-size: $font-size-base;
+            cursor: pointer;
+            background: $white;
+            transition: border-color $transition-fast;
+            
+            &:focus {
+                outline: none;
+                border-color: $primary-color;
+            }
+        }
+    }
+    
+   
+    .catalog-grid {
+        @include grid-auto-fill(rem(300), $spacing-xl);
+        margin-bottom: $spacing-2xl;
+    }
+    
+    .catalog-book-card {
+        @extend %card-base;
+        display: grid;
+        grid-template-columns: rem(120) 1fr;
+        gap: $spacing-md;
+        transition: all $transition-base;
+        
+        @include respond-to(sm) {
+            grid-template-columns: rem(140) 1fr;
+        }
+        
+        &:hover {
+            box-shadow: $shadow-xl;
+            transform: translateY(-4px);
+        }
+        
+        .book-cover-large {
+            width: 100%;
+            height: rem(180);
+            border-radius: $border-radius-md;
+        }
+        
+        .book-info {
+            @include flex-column;
+            justify-content: space-between;
+            
+            h3 {
+                font-size: $font-size-lg;
+                margin-bottom: spacing(0.5);
+                @include text-truncate;
+            }
+            
+            .author {
+                color: $text-secondary;
+                font-size: $font-size-sm;
+                margin-bottom: $spacing-sm;
+            }
+            
+            .description {
+                font-size: $font-size-sm;
+                color: $text-secondary;
+                line-height: 1.5;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                margin-bottom: $spacing-sm;
+            }
+            
+            .rating {
+                font-size: $font-size-sm;
+                margin-bottom: $spacing-sm;
+            }
+            
+            .book-actions {
+                display: flex;
+                gap: spacing(0.5);
+                flex-wrap: wrap;
+                
+                button {
+                    flex: 1 1 calc(50% - spacing(0.25));
+                    min-width: 0;
+                    padding: spacing(0.6) spacing(0.4);
+                    font-size: 0.8rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    line-height: 1.2;
+                    
+                    @include respond-to(sm) {
+                        font-size: $font-size-sm;
+                        padding: spacing(0.75) spacing(0.75);
+                    }
+                    
+                    @include respond-to(md) {
+                        padding: spacing(0.75) $spacing-sm;
+                    }
+                }
+            }
+        }
+    }
+    
+   
+    .pagination {
+        @include flex-center;
+        gap: $spacing-sm;
+        
+        .page-btn {
+            @extend %button-base;
+            padding: spacing(0.75) $spacing-md;
+            background: $white;
+            color: $text-primary;
+            border: 2px solid rgba($primary-color, 0.2);
+            
+            &.active {
+                background: $primary-color;
+                color: $white;
+                border-color: $primary-color;
+            }
+            
+            &:hover:not(.active) {
+                border-color: $primary-color;
+                color: $primary-color;
+            }
+        }
+    }
+}
