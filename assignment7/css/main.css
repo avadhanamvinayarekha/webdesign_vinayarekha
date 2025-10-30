@@ -710,8 +710,7 @@ button {
   }
 }
 .popular-books .book-item {
-  padding: 0;
-  overflow: hidden;
+ 
   cursor: pointer;
 }
 .popular-books .book-item:hover {
