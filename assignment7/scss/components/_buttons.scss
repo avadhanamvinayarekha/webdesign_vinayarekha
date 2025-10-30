@@ -1,0 +1,45 @@
+
+.btn-primary {
+    @extend %button-base;
+    
+    @include button-style($primary-color, $white);
+}
+
+.btn-secondary {
+    @extend %button-base;
+    @include button-style($white, $primary-color);
+    border: 2px solid $primary-color;
+    
+    &:hover {
+        background: $primary-color;
+        color: $white;
+    }
+}
+
+.btn-large {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-lg;
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+
+$button-variants: (
+    'success': $success,
+    'warning': $warning,
+    'danger': $danger
+);
+
+@each $name, $color in $button-variants {
+    .btn-#{$name} {
+        @extend %button-base;
+        background: $color;
+        color: contrast-color($color);
+        
+        &:hover {
+            background: shade($color, 10%);
+        }
+    }
+} 
