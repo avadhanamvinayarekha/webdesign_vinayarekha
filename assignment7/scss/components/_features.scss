@@ -1,0 +1,62 @@
+
+
+.features {
+    padding: $spacing-3xl 0;
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: $spacing-2xl;
+        font-size: $font-size-4xl;
+    }
+    
+
+    .features-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-xl;
+        justify-content: center;
+        
+        @include respond-to(md) {
+            flex-wrap: nowrap;
+        }
+    }
+    
+    .feature-card {
+        @extend %card-base;
+        flex: 1;
+        min-width: rem(250);
+        text-align: center;
+        transition: all $transition-base;
+        
+        
+        @if $shadow-lg != null {
+            &:hover {
+                box-shadow: $shadow-xl;
+                transform: translateY(-8px);
+            }
+        }
+        
+        .feature-icon {
+            font-size: $font-size-5xl;
+            margin-bottom: $spacing-md;
+            
+            transition: transform $transition-base;
+        }
+        
+        &:hover .feature-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        h3 {
+            font-size: $font-size-xl;
+            margin-bottom: $spacing-sm;
+            color: $primary-color;
+        }
+        
+        p {
+            color: $text-secondary;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+    }
+}
