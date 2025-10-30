@@ -1,0 +1,104 @@
+ 
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@mixin grid-auto-fit($min-width: 250px, $gap: 1.5rem) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+    gap: $gap;
+}
+
+@mixin grid-auto-fill($min-width: 250px, $gap: 1.5rem) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+    gap: $gap;
+}
+
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == sm {
+        @media (min-width: $breakpoint-sm) { @content; }
+    }
+    @else if $breakpoint == md {
+        @media (min-width: $breakpoint-md) { @content; }
+    }
+    @else if $breakpoint == lg {
+        @media (min-width: $breakpoint-lg) { @content; }
+    }
+    @else if $breakpoint == xl {
+        @media (min-width: $breakpoint-xl) { @content; }
+    }
+}
+
+
+@mixin button-style($bg-color, $text-color: $white, $hover-transform: translateY(-2px)) {
+    background: $bg-color;
+    color: $text-color;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $border-radius-md;
+    border: none;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    transition: all $transition-base;
+    text-decoration: none;
+    display: inline-block;
+    
+    &:hover {
+        transform: $hover-transform;
+        box-shadow: $shadow-lg;
+        opacity: 0.9;
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+
+@mixin card($padding: $spacing-lg, $shadow: $shadow-md) {
+    background: $white;
+    border-radius: $border-radius-lg;
+    padding: $padding;
+    box-shadow: $shadow;
+    transition: all $transition-base;
+}
+
+
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+@mixin gradient-bg($color1, $color2, $direction: 135deg) {
+    background: linear-gradient($direction, $color1 0%, $color2 100%);
+}
+
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@mixin animate($name, $duration: 1s, $timing: ease-in-out, $iteration: 1) {
+    animation: $name $duration $timing $iteration;
+}
