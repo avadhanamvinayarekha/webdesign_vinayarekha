@@ -354,7 +354,7 @@ button {
   margin-bottom: 4rem;
 }
 .catalog-main .catalog-book-card {
-  display: grid;
+ 
   grid-template-columns: 7.5rem 1fr;
   gap: 1.5rem;
   transition: all 300ms ease-in-out;
