@@ -1,0 +1,78 @@
+ 
+
+.popular-books {
+    padding: $spacing-3xl 0;
+    background: $white;
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: $spacing-2xl;
+    }
+    
+ 
+    .books-grid {
+        @include grid-auto-fit(rem(200), $spacing-xl);
+        
+        @include respond-to(lg) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+    
+    .book-item {
+        @extend %card-base;
+        padding: 0;
+        overflow: hidden;
+        cursor: pointer;
+        
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: $shadow-xl;
+            
+            .book-cover {
+                transform: scale(1.05);
+            }
+        }
+        
+        .book-cover {
+            width: 100%;
+            height: rem(280);
+            transition: transform $transition-base;
+        }
+        
+        .book-title {
+            padding: $spacing-sm $spacing-md 0;
+            font-size: $font-size-base;
+            margin-bottom: spacing(0.5);
+            @include text-truncate;
+        }
+        
+        .book-author {
+            padding: 0 $spacing-md;
+            color: $text-secondary;
+            font-size: $font-size-sm;
+            margin-bottom: $spacing-sm;
+        }
+        
+        .book-pricing {
+            @include flex-between;
+            padding: $spacing-sm $spacing-md;
+            border-top: 1px solid rgba($dark-color, 0.1);
+            flex-wrap: wrap;
+            gap: spacing(0.5);
+            
+            .price-rent,
+            .price-buy {
+                font-size: $font-size-sm;
+                font-weight: $font-weight-semibold;
+            }
+            
+            .price-rent {
+                color: $secondary-color;
+            }
+            
+            .price-buy {
+                color: $primary-color;
+            }
+        }
+    }
+}
