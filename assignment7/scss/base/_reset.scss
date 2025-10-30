@@ -1,0 +1,77 @@
+// base/_reset.scss
+
+// CSS Custom Properties (used alongside SASS variables)
+:root {
+    --color-primary: #{$primary-color};
+    --color-secondary: #{$secondary-color};
+    --color-accent: #{$accent-color};
+    --spacing-unit: #{$spacing-sm};
+    --transition-speed: #{$transition-base};
+    --border-radius: #{$border-radius-md};
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-primary;
+    color: $text-primary;
+    background: $light-color;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+// Heading styles using placeholder
+h1, h2, h3, h4, h5, h6 {
+    @extend %heading-base;
+}
+
+h1 {
+    font-size: $font-size-5xl;
+}
+
+h2 {
+    font-size: $font-size-4xl;
+}
+
+h3 {
+    font-size: $font-size-3xl;
+}
+
+h4 {
+    font-size: $font-size-2xl;
+}
+
+p {
+    margin-bottom: $spacing-md;
+}
+
+a {
+    @extend %link-reset;
+}
+
+ul, ol {
+    @extend %list-reset;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+// Container class
+.container {
+    @extend %container;
+} 
