@@ -1,0 +1,14 @@
+# Track assignment7 (override earlier patterns)
+!assignment7/
+!assignment7/**
+# Ignore heavy stuff inside assignment7
+assignment7/node_modules/
+assignment7/.sass-cache/
+assignment7/css/*.map
+# Track assignment7 (override earlier patterns)
+!assignment7/
+!assignment7/**
+# Ignore heavy stuff inside assignment7
+assignment7/node_modules/
+assignment7/.sass-cache/
+assignment7/css/*.map
